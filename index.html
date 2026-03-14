@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
     <style>
         :root {
@@ -669,6 +670,24 @@
             z-index: 1;
         }
 
+        .skill-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            background: var(--accent);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .skill-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            stroke: white;
+        }
+
         .skill-emoji {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
@@ -888,8 +907,16 @@
         .contact-emoji {
             font-size: 4rem;
             margin-bottom: 2rem;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             animation: wiggle 2s ease-in-out infinite;
+        }
+
+        .contact-emoji svg {
+            width: 3.5rem;
+            height: 3.5rem;
+            stroke: white;
         }
 
         @keyframes wiggle {
@@ -941,6 +968,18 @@
 
         .contact-link .emoji {
             font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-link .emoji svg {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
+        .contact-info svg {
+            width: 1rem;
+            height: 1rem;
         }
 
         .contact-infos {
@@ -1176,7 +1215,7 @@
 
             <div class="skills-grid">
                 <div class="skill-card">
-                    <span class="skill-emoji">💻</span>
+                    <div class="skill-icon"><i data-lucide="code-2"></i></div>
                     <h3>Dev Web</h3>
                     <p>Je code des sites et des applis web. Du front au back, j'aime que ce soit propre et fonctionnel.</p>
                     <div class="skill-tags">
@@ -1188,7 +1227,7 @@
                 </div>
 
                 <div class="skill-card">
-                    <span class="skill-emoji">🎬</span>
+                    <div class="skill-icon"><i data-lucide="film"></i></div>
                     <h3>Vidéo</h3>
                     <p>Montage, effets spéciaux, motion design... J'aime raconter des histoires en images.</p>
                     <div class="skill-tags">
@@ -1199,7 +1238,7 @@
                 </div>
 
                 <div class="skill-card">
-                    <span class="skill-emoji">🎨</span>
+                    <div class="skill-icon"><i data-lucide="pen-tool"></i></div>
                     <h3>Graphisme</h3>
                     <p>Affiches, logos, identités visuelles... Je crée des visuels qui ont de la gueule.</p>
                     <div class="skill-tags">
@@ -1329,7 +1368,7 @@
     <section id="contact" class="contact">
         <div class="contact-bg-text">SAY HI!</div>
         <div class="contact-container">
-            <span class="contact-emoji">🚀</span>
+            <span class="contact-emoji"><i data-lucide="rocket"></i></span>
             <h2 class="contact-title">Un projet en tête ?<br>Parlons-en !</h2>
             <p class="contact-text">
                 Stage, freelance, question random... Je suis toujours partant pour discuter. Le pire qu'il puisse arriver c'est qu'on devienne potes.
@@ -1337,21 +1376,21 @@
 
             <div class="contact-links">
                 <a href="mailto:loric.v18@gmail.com" class="contact-link">
-                    <span class="emoji">✉️</span>
+                    <span class="emoji"><i data-lucide="mail"></i></span>
                     loric.v18@gmail.com
                 </a>
                 <a href="#" class="contact-link">
-                    <span class="emoji">💼</span>
+                    <span class="emoji"><i data-lucide="linkedin"></i></span>
                     LinkedIn
                 </a>
             </div>
 
             <div class="contact-infos">
                 <div class="contact-info">
-                    <span>📍</span> Béziers, France
+                    <i data-lucide="map-pin"></i> Béziers, France
                 </div>
                 <div class="contact-info">
-                    <span>📱</span> +33 6 XX XX XX XX
+                    <i data-lucide="smartphone"></i> +33 6 XX XX XX XX
                 </div>
             </div>
         </div>
@@ -1360,7 +1399,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-left">
-            © 2024 — Fait avec 🧡 et beaucoup de café
+            © 2025 — Fait avec <i data-lucide="heart" style="display:inline; width:14px; height:14px; stroke:var(--accent); vertical-align:middle;"></i> et beaucoup de café
         </div>
         <div class="footer-right">
             <a href="#about">À propos</a>
@@ -1371,6 +1410,8 @@
     </footer>
 
     <script>
+        lucide.createIcons();
+
         // Mobile menu
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
