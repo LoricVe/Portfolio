@@ -1,0 +1,3 @@
+
+- jeu en three.js (beatsauber)
+- scrum kevin lena gestion de projet...
